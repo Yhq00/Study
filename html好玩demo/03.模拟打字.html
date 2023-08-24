@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>打字</title>
+  </head>
+  <style>
+    body {
+      min-width: 100vh;
+      display: flex;
+      justify-content: center;
+      font-family: monospace;
+      background-color: #454545;
+      color: #fff;
+    }
+    h1 {
+      position: relative;
+    }
+    h1::after,
+    h1::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+    h1::before {
+      background-color: #454545;
+      animation: typing 3s steps(7) 500ms forwards,
+        del 2s steps(4) 4.5s forwards;
+    }
+    h1::after {
+      width: 2px;
+      background-color: #000;
+      animation: typing 3s steps(7) 500ms forwards, belink 500ms infinite,
+        del 2s steps(4) 4.5s forwards;
+    }
+    @keyframes del {
+      from {
+        left: 100%;
+      }
+      to {
+        left: 6ch;
+      }
+    }
+    @keyframes belink {
+      from,
+      to {
+        background: transparent;
+      }
+      50% {
+        background: #fff;
+      }
+    }
+    @keyframes typing {
+      to {
+        left: 100%;
+      }
+    }
+  </style>
+
+  <body>
+    <h1 class="typing">对不起，我爱你</h1>
+  </body>
+</html>

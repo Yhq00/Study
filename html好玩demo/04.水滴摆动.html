@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>水滴</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #3498db;
+      }
+      #water {
+        margin-top: 200px;
+        width: 300px;
+        height: 300px;
+        /* border: 1px solid #000; */
+        border-radius: 59% 41% 63% 37% / 22% 26% 74% 78%;
+        box-shadow: inset 10px 20px 30px rgba(0, 0, 0, 0.5),
+          10px 10px 20px rgba(0, 0, 0, 0.3), 15px 10px 30px rgba(0, 0, 0, 0.05),
+          inset -10px -10px 15px rgba(255, 255, 255, 0.8);
+        animation: action 3s linear infinite alternate;
+      }
+      #water::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 240px;
+        left: 48%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50% 50% 63% 67% / 54% 63% 37% 46%;
+      }
+      #water::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 265px;
+        left: 47%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 42% 58% 63% 67% / 63% 71% 29% 37%;
+      }
+      @keyframes action {
+        25% {
+          border-radius: 52% 48% 62% 38% / 52% 75% 25% 48%;
+        }
+        50% {
+          border-radius: 52% 48% 42% 58% / 52% 50% 50% 48%;
+        }
+        100% {
+          border-radius: 52% 48% 54% 46% / 52% 47% 53% 48%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="water"></div>
+  </body>
+</html>
